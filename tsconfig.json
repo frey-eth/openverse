@@ -18,9 +18,19 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/components": ["./components"],
+      "@/public": ["./public"],
+      "@/images/*": ["./public/images/*"],
+      "@/icons/*": ["./public/icons/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "config/web3config.ts"
+  ],
   "exclude": ["node_modules"]
 }

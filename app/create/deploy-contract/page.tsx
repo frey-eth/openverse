@@ -25,8 +25,14 @@ const DeployContract = () => {
     setValue,
     formState: { errors },
   } = useForm<CollectionContractType>();
+
   const onSubmit: SubmitHandler<CollectionContractType> = (data) => {
-    console.log(data);
+    
+    try {
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleImageUpload = (event: any) => {
@@ -67,9 +73,12 @@ const DeployContract = () => {
   };
 
   return (
-    <div className="w-full px-4 pt-20 flex justify-center items-center h-screen">
-      <div className="flex flex-row w-[900px] gap-3 p-5 border rounded-lg">
-        <form className="flex flex-col gap-2" onSubmit={handleSubmit(onSubmit)}>
+    <div className="w-full  px-4 pt-20 flex justify-center items-center min-h-screen">
+      <div className="flex md:flex-row flex-col-reverse w-[900px] gap-5 p-5 border rounded-lg">
+        <form
+          className="flex flex-col gap-2 "
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <h3 className="text-2xl font-bold">
             First, you’ll need to deploy a contract
           </h3>
@@ -129,7 +138,7 @@ const DeployContract = () => {
             </div>
           </div>
 
-          <div className="flex flex-row w-full gap-2">
+          <div className="flex md:flex-row flex-col w-full gap-2">
             <div className="flex-1 flex flex-col gap-2">
               <div className="flex flex-row items-center gap-1">
                 Contract Name <CiCircleAlert />

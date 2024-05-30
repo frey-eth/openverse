@@ -109,10 +109,7 @@ const Header = () => {
           >
             <GiFireDash className="text-[24px] " />
             {address
-              ? `${address.slice(0, 6)}...${address.slice(
-                  -6,
-                  address.length
-                )}`
+              ? `${address.slice(0, 6)}...${address.slice(-6, address.length)}`
               : "Login"}
           </button>
 

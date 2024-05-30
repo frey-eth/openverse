@@ -60,8 +60,6 @@ const CreatePage = () => {
         <Swiper
           className="w-full h-full"
           scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           slidesPerView={1}
           autoplay={{ delay: 500 }}
           loop={true}

@@ -1,13 +1,28 @@
 "use client";
 
 // Import Swiper styles
-
+import { useReadContract } from "wagmi";
 import Ranking from "@/components/ranking/page";
 import Collection from "@/components/collection/page";
 import Highlight from "@/components/highlight/page";
 import { CollectionProps } from "@/types/global";
+import abi from "../contract/abi.json";
+
+type NFTProps = {
+  owner: string;
+  price: BigInt;
+  seller: string;
+  sold: boolean;
+  tokenId: BigInt;
+};
 
 export default function Home() {
+  // const { data, error, isPending } = useReadContract({
+  //   abi,
+  //   address: "0x73BB091d7fD8fe191e157FbC903156eeD5083e0B",
+  //   functionName: "fetchMarketItems",
+  // });
+
   const collectionsData: CollectionProps[] = [
     {
       name: "Pixelmon",
@@ -58,10 +73,8 @@ export default function Home() {
         <Collection
           title="Spotlight on Base Collections"
           collections={collectionsData.reverse()}
-        /> 
+        />
       </section>
-
-
     </main>
   );
 }

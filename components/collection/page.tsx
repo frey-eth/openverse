@@ -18,8 +18,6 @@ const Collection = ({ title, collections }: CollectionsProps) => {
           className="h-[300px] w-full"
           navigation
           scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           slidesPerView={1.2}
           autoplay={{ delay: 1000 }}
           spaceBetween={10}

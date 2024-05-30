@@ -53,8 +53,6 @@ const Highlight = () => {
         className="h-[320px] w-full"
         navigation
         scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         slidesPerView={1}
         autoplay={{ delay: 2500 }}
         spaceBetween={30}

@@ -44,9 +44,9 @@ const Ranking = () => {
     <div className="p-2 w-full">
       <div className="w-full flex flex-row justify-between h-10">
         <div className="flex flex-row items-center ">
-          {tabs.map((t: any) => (
+          {tabs.map((t: any, index: number) => (
             <button
-              key={t}
+              key={index}
               onClick={() => setTab(t)}
               className={`text-sm font-semibold transition-all ${
                 tab === t

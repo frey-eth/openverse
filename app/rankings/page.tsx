@@ -10,7 +10,7 @@ const Ranking = () => {
         Collection stats
       </h1>
       <div className="flex flex-row gap-2 w-full pb-6 border-b-[2px]">
-        {Tabs.map((tab, index) => (
+        {Tabs.map((tab: string, index: number) => (
           <div
             key={index}
             className={`font-semibold text-[20px] px-3 py-2 ${

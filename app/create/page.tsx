@@ -39,7 +39,10 @@ const CreatePage = () => {
             <IoIosArrowForward className="text-[40px] cursor-pointer" />
           </Link>
 
-          <div className="flex flex-row items-center w-full rounded-lg bg-black bg-opacity-20 p-4">
+          <Link
+            href={"create/mint-nft"}
+            className="flex flex-row items-center w-full rounded-lg bg-black bg-opacity-20 p-4"
+          >
             <div className="flex flex-col gap-2 flex-1">
               <div className="font-bold text-xl flex flex-row items-center gap-1">
                 <IoImageSharp className=" text-black" />
@@ -53,7 +56,7 @@ const CreatePage = () => {
               </div>
             </div>
             <IoIosArrowForward className="text-[40px] cursor-pointer" />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="md:w-1/2 w-full h-[600px] rounded-xl overflow-hidden shadow">

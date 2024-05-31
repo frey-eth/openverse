@@ -6,7 +6,6 @@ import Ranking from "@/components/ranking/page";
 import Collection from "@/components/collection/page";
 import Highlight from "@/components/highlight/page";
 import { CollectionProps } from "@/types/global";
-import abi from "../contract/abi.json";
 
 type NFTProps = {
   owner: string;
@@ -17,11 +16,6 @@ type NFTProps = {
 };
 
 export default function Home() {
-  // const { data, error, isPending } = useReadContract({
-  //   abi,
-  //   address: "0x73BB091d7fD8fe191e157FbC903156eeD5083e0B",
-  //   functionName: "fetchMarketItems",
-  // });
 
   const collectionsData: CollectionProps[] = [
     {

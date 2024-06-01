@@ -82,8 +82,8 @@ const DeployContract = () => {
             First, you&apos;ll need to deploy a contract
           </h3>
           <p>
-            You'll need to deploy an ERC-721 contract onto the blockchain before
-            you can create a drop. What is a contract?
+            You&apos;ll need to deploy an ERC-721 contract onto the blockchain
+            before you can create a drop. What is a contract?
           </p>
 
           <div
@@ -180,7 +180,7 @@ const DeployContract = () => {
 
         <div className="flex flex-col gap-3 bg-black bg-opacity-80 text-white p-4 rounded-lg">
           <h3 className="font-bold">
-            After you deploy your contract you'll be able to:
+            After you deploy your contract you&apos;ll be able to:
           </h3>
           <div className="flex flex-row items-start gap-2">
             <IoIosListBox size={30} />

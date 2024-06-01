@@ -5,7 +5,7 @@ import { MediaRenderer, useStorageUpload } from "@thirdweb-dev/react";
 import { IoCloudUpload } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { useWriteContract } from "wagmi";
-import abi from "../../../contract/abi.json";
+import abi from "../../../contract/nft_abi.json";
 import { parseEther } from "viem";
 
 type CollectionContractType = {
@@ -17,7 +17,7 @@ type CollectionContractType = {
 const MintNFT = () => {
   const { mutateAsync: upload } = useStorageUpload();
   const [nft, setNft] = useState<File | null>(null);
-
+  const [loading, setLoading] = useState(false);
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setNft(e.target.files[0]);
@@ -49,12 +49,13 @@ const MintNFT = () => {
         console.log("No image selected");
         return;
       }
+      setLoading(true);
       const uri = await upload({ data: [nft] });
       if (uri[0]) {
         console.log("Uploaded image URI:", uri);
         writeContract({
           abi,
-          address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
+          address: process.env.NEXT_PUBLIC_NFT_ADDRESS as string,
           functionName: "mintNFT",
           args: [uri[0]],
           value: parseEther("0.0001"),
@@ -62,6 +63,8 @@ const MintNFT = () => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -103,8 +106,19 @@ const MintNFT = () => {
             <p className="text-red-500 text-center">Image is required</p>
           )}
           <div className="w-full flex justify-end">
-            <button type="submit" className="rounded-md border p-2">
-              Mint
+            <button
+              type="submit"
+              className="p-2 bg-black w-20 h-10 text-white rounded-md shadow-md flex items-center justify-center"
+              disabled={loading}
+            >
+              {loading || isLoading ? (
+                <div className="relative">
+                  <div className="h-6 w-6 rounded-full border-t-2 border-b-2 border-gray-200"></div>
+                  <div className="absolute top-0 left-0 h-6 w-6 rounded-full border-t-2 border-b-2 border-blue-500 animate-spin"></div>
+                </div>
+              ) : (
+                "Mint"
+              )}
             </button>
           </div>
         </form>

@@ -92,11 +92,11 @@ const Header = () => {
           </div>
         </div>
         <div className="flex flex-row items-center gap-1">
-          <FaSearch className="text-[20px]" />
-          <div className="flex flex-row rounded items-center justify-center bg-gray-200  py-2 px-3 ">
+          <div className="flex flex-row rounded items-center justify-center bg-gray-200  py-2 px-3 gap-2">
+            <FaSearch className="text-[20px]" />
             <input
               type="text"
-              className="flex-1  min-w-[400px] outline-none bg-transparent "
+              className="flex-1 min-w-[400px] outline-none bg-transparent "
               placeholder="Search"
             />
             <div className="border p-1 ">/</div>
@@ -113,9 +113,9 @@ const Header = () => {
               : "Login"}
           </button>
 
-          <button className="flex h-full flex-row bg-slate-100 rounded-lg  p-2  items-center justify-center gap-2 shadow">
+          <Link href={'/user'} className="flex h-full flex-row bg-slate-100 rounded-lg  p-2  items-center justify-center gap-2 shadow">
             <FaRegCircleUser className="text-[24px]" />
-          </button>
+          </Link>
 
           <button className="flex h-full flex-row bg-slate-100 rounded-lg  p-2  items-center justify-center gap-2 shadow">
             <MdOutlineShoppingCart className="text-[24px]" />

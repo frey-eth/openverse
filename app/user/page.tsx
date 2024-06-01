@@ -25,7 +25,7 @@ const User = () => {
         media_items: false,
       });
       if (res) {
-        setNftData(res.data.result.reverse());
+        setNftData(res.data.result);
       }
     } catch (error) {
       console.log(error);
@@ -140,15 +140,7 @@ const User = () => {
               </h2>
               <div className="flex flex-wrap gap-6 w-full">
                 {nfts.map((nft: ApiNFTProps, index: number) => {
-                  return (
-                    <ItemCard
-                      key={index}
-                      uri={nft.token_uri}
-                      name={nft.name}
-                      symbol={nft.symbol}
-                      tokenId={nft.token_id}
-                    />
-                  );
+                  return <ItemCard key={index} data={nft} />;
                 })}
               </div>
             </div>

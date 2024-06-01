@@ -58,7 +58,7 @@ const MintNFT = () => {
           address: process.env.NEXT_PUBLIC_NFT_ADDRESS as string,
           functionName: "mintNFT",
           args: [uri[0]],
-          value: parseEther("0.0001"),
+          value: parseEther("0"),
         });
       }
     } catch (error) {

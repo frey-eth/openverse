@@ -103,7 +103,10 @@ const Ranking = () => {
           </div>
           {/* Item */}
           {data.map((d: TrendingItem, i: number) => (
-            <div className="grid grid-cols-10  gap-1 p-2 items-center font-bold">
+            <div
+              key={i}
+              className="grid grid-cols-10  gap-1 p-2 items-center font-bold"
+            >
               <div className="col-span-1 ">{i + 6}</div>
               <div className="col-span-5 flex flex-row items-center gap-1">
                 <div className="w-[70px] h-[70px] rounded-lg overflow-hidden">

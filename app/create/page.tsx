@@ -32,7 +32,7 @@ const CreatePage = () => {
               <div className="flex flex-row items-center">
                 <span className="text-md leading-md text-primary flex-1">
                   Launch your NFT collection for others to purchase. Your items
-                  won't display until they've been minted.
+                  won&apos;t display until they&apos;ve been minted.
                 </span>
               </div>
             </div>

@@ -79,7 +79,7 @@ const DeployContract = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h3 className="text-2xl font-bold">
-            First, you'll need to deploy a contract
+            First, you&apos;ll need to deploy a contract
           </h3>
           <p>
             You'll need to deploy an ERC-721 contract onto the blockchain before
@@ -213,7 +213,7 @@ const DeployContract = () => {
             <div className="flex flex-col text-[16px] leading-[16px] font-medium gap-2">
               Can view
               <p className="font-normal">
-                That you've deployed a contract onto the blockchain.
+                That you&apos;ve deployed a contract onto the blockchain.
               </p>
             </div>
           </div>

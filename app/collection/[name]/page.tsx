@@ -93,7 +93,7 @@ const SingleCollection = () => {
       <div className="flex flex-wrap gap-4 px-4">
         {NFTCombined &&
           NFTCombined.length > 0 &&
-          NFTCombined.map((nft) => <SellCard data={nft} />)}
+          NFTCombined.map((nft, index) => <SellCard key={index} data={nft} />)}
       </div>
     </div>
   );

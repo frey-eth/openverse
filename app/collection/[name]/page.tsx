@@ -1,20 +1,25 @@
 "use client";
 
 import { nftService } from "@/services/nft.service";
-import { ApiNFTProps } from "@/types/global";
+import {
+  ApiNFTProps,
+  GetAllByContractType,
+  SellItemType,
+} from "@/types/global";
 import { useEffect, useState } from "react";
 import { useReadContract } from "wagmi";
 import market_abi from "../../../contract/market_abi.json";
 import SellCard from "@/components/commons/card/SellCard";
+import { parseGwei } from "viem";
 
 const SingleCollection = () => {
   const [nftData, setNftData] = useState<ApiNFTProps[]>([]);
-  const getSeller = useReadContract({
+  const respone = useReadContract({
     abi: market_abi,
     address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
     functionName: "getAllListingItems",
-  }).data as any[];
-
+  });
+  const getSeller = respone.data as GetAllByContractType[];
   const FetchNTFs = async (address: string) => {
     try {
       const res = await nftService.getNFTsByWallet(address, {
@@ -35,16 +40,17 @@ const SingleCollection = () => {
     FetchNTFs(process.env.NEXT_PUBLIC_MARKET_ADDRESS as string);
   }, []);
 
-  const NFTCombined: any[] = nftData.map((item1) => {
+  const NFTCombined = nftData.map((item1) => {
     const combinedItem =
       getSeller &&
       getSeller.find(
-        (item2: any) => item1.token_id == item2.tokenId.toString()
+        (item2: GetAllByContractType) =>
+          item1.token_id == item2?.tokenId.toString()
       );
     return {
       ...item1,
-      ...combinedItem,
-      tokenId: combinedItem.tokenId.toString(), // Ensure tokenId is a string to match token_id
+      price: combinedItem?.price,
+      seller: combinedItem?.seller, // Ensure tokenId is a string to match token_id
     };
   });
 
@@ -93,7 +99,9 @@ const SingleCollection = () => {
       <div className="flex flex-wrap gap-4 px-4">
         {NFTCombined &&
           NFTCombined.length > 0 &&
-          NFTCombined.map((nft, index) => <SellCard key={index} data={nft} />)}
+          NFTCombined.map((nft: SellItemType, index: number) => (
+            <SellCard key={index} data={nft} />
+          ))}
       </div>
     </div>
   );

@@ -46,7 +46,6 @@ export default function SellModal({
       functionName: "createListingItem",
       args: [parseInt(data.token_id), parseEther(price.toString())],
     });
-
     setLoading(false);
     close();
   };

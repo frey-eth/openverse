@@ -1,3 +1,5 @@
+import { ApiNFTProps } from "@/types/global";
+import { SellItemType } from "./global.d";
 export type NFTItemProps = {
   title: string;
   image: string;
@@ -31,4 +33,16 @@ export type ApiNFTProps = {
   possible_spam: boolean;
   collection_logo: string | null;
   collection_banner_image: string | null;
+};
+
+export type GetAllByContractType = {
+  active: boolean;
+  price: BigInt;
+  tokenId: BigInt;
+  seller: string;
+};
+
+export type SellItemType = ApiNFTProps & {
+  price?: BigInt;
+  seller?: string;
 };

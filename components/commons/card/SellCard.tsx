@@ -15,7 +15,7 @@ const SellCard = ({ data }: { data: any }) => {
     });
   };
   return (
-    <div className="flex flex-col gap-3 max-w-sm border shadow-xl rounded-lg">
+    <div className="flex flex-col gap-3 max-w-sm border shadow-xl rounded-lg overflow-hidden">
       <div className="w-[250px] h-[250px] overflow-hidden rounded-lg">
         <img
           src={data.token_uri}

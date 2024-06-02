@@ -1,5 +1,6 @@
 import { NFTItemProps } from "@/types/global";
 import Image from "next/image";
+import Link from "next/link";
 import { TiTick } from "react-icons/ti";
 
 const HeaderCard = ({ title, image, price }: NFTItemProps) => {
@@ -13,15 +14,18 @@ const HeaderCard = ({ title, image, price }: NFTItemProps) => {
           fill
           className=" hover:scale-110 transition-transform"
         />
-        <div className="absolute bottom-0 flex flex-col w-full p-2 text-white bg-gradient-to-t from-black to-transparent ">
+        <Link
+          href={"/collection/atomsolution"}
+          className="absolute bottom-0 flex flex-col w-full p-2 text-white bg-gradient-to-t from-black to-transparent "
+        >
           <h3 className="font-bold flex flex-row items-center gap-2">
             {title}
             <div className="w-4 h-4 rounded-full bg-blue-600">
               <TiTick />
             </div>
           </h3>
-          <p>{price} ETH</p>
-        </div>
+          <p>Floor {price} ETH</p>
+        </Link>
       </div>
     </>
   );

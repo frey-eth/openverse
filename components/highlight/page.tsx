@@ -6,8 +6,8 @@ import { NFTItemProps } from "@/types/global";
 const Highlight = () => {
   const highlightItems: NFTItemProps[] = [
     {
-      title: "The First Ever",
-      image: "/images/demo1.jpg",
+      title: "Atom Solution",
+      image: "/images/atom.png",
       price: 0.1,
     },
     {

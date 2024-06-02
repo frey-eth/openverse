@@ -29,6 +29,7 @@ const MintNFT = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<CollectionContractType>();
+
   const { writeContract, isLoading, isSuccess, isError } = useWriteContract();
 
   useEffect(() => {

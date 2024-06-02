@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { useReadContract } from "wagmi";
 import market_abi from "../../../contract/market_abi.json";
 import SellCard from "@/components/commons/card/SellCard";
-import { parseGwei } from "viem";
 
 const SingleCollection = () => {
   const [nftData, setNftData] = useState<ApiNFTProps[]>([]);

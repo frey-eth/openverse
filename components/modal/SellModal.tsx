@@ -29,7 +29,7 @@ export default function SellModal({
     setOpenModal(false);
   }
   const [price, setPrice] = useState(0);
-  const { writeContractAsync } = useWriteContract();
+  const { writeContractAsync, writeContract } = useWriteContract();
   const [loading, setLoading] = useState(false);
   const handleSubmit = async () => {
     setLoading(true);
@@ -40,12 +40,17 @@ export default function SellModal({
       args: [process.env.NEXT_PUBLIC_MARKET_ADDRESS, data.token_id],
     });
 
-    await writeContractAsync({
-      abi: market_abi,
-      address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
-      functionName: "createListingItem",
-      args: [parseInt(data.token_id), parseEther(price.toString())],
-    });
+    setTimeout(
+      () =>
+        writeContract({
+          abi: market_abi,
+          address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
+          functionName: "createListingItem",
+          args: [parseInt(data.token_id), parseEther(price.toString())],
+        }),
+      3000
+    );
+
     setLoading(false);
     close();
   };

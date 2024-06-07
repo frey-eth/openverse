@@ -45,7 +45,7 @@ export default function SellModal({
         writeContract({
           abi: market_abi,
           address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
-          functionName: "createListingItem",
+          functionName: " ",
           args: [parseInt(data.token_id), parseEther(price.toString())],
         }),
       3000

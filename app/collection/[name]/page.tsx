@@ -15,7 +15,7 @@ const SingleCollection = () => {
   const [nftData, setNftData] = useState<ApiNFTProps[]>([]);
   const respone = useReadContract({
     abi: market_abi,
-    address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
+    address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as `0x${string}`,
     functionName: "getAllListingItems",
   });
   const getSeller = respone.data as GetAllByContractType[];

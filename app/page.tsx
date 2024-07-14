@@ -1,34 +1,17 @@
 "use client";
 
-// Import Swiper styles
-import { useReadContract } from "wagmi";
 import Ranking from "@/components/ranking/page";
 import Collection from "@/components/collection/page";
 import Highlight from "@/components/highlight/page";
 import { CollectionProps } from "@/types/global";
 
-type NFTProps = {
-  owner: string;
-  price: BigInt;
-  seller: string;
-  sold: boolean;
-  tokenId: BigInt;
-};
-
 export default function Home() {
-
   const collectionsData: CollectionProps[] = [
     {
       name: "Pixelmon",
       volume: 100,
       floorPrice: 0.1,
       image: "/images/demo1.jpg",
-    },
-    {
-      name: "Interstellar",
-      volume: 80,
-      floorPrice: 0.01,
-      image: "/images/demo2.jpg",
     },
 
     {

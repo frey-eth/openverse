@@ -35,7 +35,7 @@ export default function SellModal({
     setLoading(true);
     await writeContractAsync({
       abi: nft_abi,
-      address: process.env.NEXT_PUBLIC_NFT_ADDRESS as string,
+      address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x${string}`,
       functionName: "approve",
       args: [process.env.NEXT_PUBLIC_MARKET_ADDRESS, data.token_id],
     });
@@ -44,7 +44,7 @@ export default function SellModal({
       () =>
         writeContract({
           abi: market_abi,
-          address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as string,
+          address: process.env.NEXT_PUBLIC_MARKET_ADDRESS as `0x${string}`,
           functionName: " ",
           args: [parseInt(data.token_id), parseEther(price.toString())],
         }),

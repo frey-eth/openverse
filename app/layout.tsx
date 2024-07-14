@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Header from "@/components/header/page";
 import Footer from "@/components/footer/page";
 import { cookieToInitialState } from "wagmi";
@@ -28,17 +25,17 @@ export default function RootLayout({
     <html lang="en">
       <body className=" bg-white">
         <ThirdProvider>
-            <Web3ModalProvider initialState={initialState}>
-              <Header />
-              <div className="min-h-screen">{children}</div>
-              <Footer />
-              <Toaster
-                position="top-right"
-                toastOptions={{
-                  duration: 5000,
-                }}
-              />
-            </Web3ModalProvider>{" "}
+          <Web3ModalProvider initialState={initialState}>
+            <Header />
+            <div className="min-h-screen">{children}</div>
+            <Footer />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 5000,
+              }}
+            />
+          </Web3ModalProvider>{" "}
         </ThirdProvider>
       </body>
     </html>

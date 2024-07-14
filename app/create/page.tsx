@@ -11,8 +11,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 const CreatePage = () => {
   return (
-    <div className="flex flex-wrap w-full h-full pt-20 px-4  overflow-hidden">
-      <div className="md:w-1/2 w-full h-[600px] text-black flex flex-col justify-end px-4 gap-4">
+    <div className="flex lg:flex-row flex-col-reverse gap-2 w-full h-full pt-20 px-4  overflow-hidden">
+      <div className="md:w-1/2 w-full lg:h-[600px] text-black flex flex-col justify-end px-4 gap-4">
         <div className="text-3xl font-bold flex flex-row gap-1 items-center">
           <div className="w-fit h-fit rounded-full bg-black  shadow">
             <GiSpaceship className=" text-white" />
@@ -59,7 +59,7 @@ const CreatePage = () => {
           </Link>
         </div>
       </div>
-      <div className="md:w-1/2 w-full h-[600px] rounded-xl overflow-hidden shadow">
+      <div className="md:w-1/2 w-full h-[300px] lg:h-[600px] rounded-xl overflow-hidden shadow">
         <Swiper
           className="w-full h-full"
           scrollbar={{ draggable: true }}

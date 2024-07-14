@@ -56,7 +56,7 @@ const MintNFT = () => {
         console.log("Uploaded image URI:", uri);
         writeContract({
           abi,
-          address: process.env.NEXT_PUBLIC_NFT_ADDRESS as string,
+          address: process.env.NEXT_PUBLIC_NFT_ADDRESS as `0x${string}`,
           functionName: "mintNFT",
           args: [uri[0]],
           value: parseEther("0"),

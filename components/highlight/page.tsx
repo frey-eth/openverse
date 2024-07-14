@@ -1,3 +1,7 @@
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import HeaderCard from "@/components/commons/card/HeaderCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -5,11 +9,6 @@ import { NFTItemProps } from "@/types/global";
 
 const Highlight = () => {
   const highlightItems: NFTItemProps[] = [
-    {
-      title: "Atom Solution",
-      image: "/images/atom.png",
-      price: 0.1,
-    },
     {
       title: "The Second Ever",
       image: "/images/demo2.jpg",
@@ -47,7 +46,7 @@ const Highlight = () => {
     },
   ];
   return (
-    <div className="overflow-hidden px-4">
+    <div className="overflow-hidden lg:px-4">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         className="h-[320px] w-full"
@@ -70,7 +69,7 @@ const Highlight = () => {
         }}
       >
         {highlightItems.map((item: NFTItemProps, index: number) => (
-          <SwiperSlide key={index} className=" max-w)-sm">
+          <SwiperSlide key={index}>
             <HeaderCard {...item} />
           </SwiperSlide>
         ))}

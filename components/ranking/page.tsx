@@ -41,7 +41,7 @@ const Ranking = () => {
     },
   ];
   return (
-    <div className="p-2 w-full">
+    <div className="p-2 w-full max-lg:hidden">
       <div className="w-full flex flex-row justify-between h-10">
         <div className="flex flex-row items-center ">
           {tabs.map((t: any, index: number) => (
@@ -77,8 +77,8 @@ const Ranking = () => {
             >
               <div className="col-span-1 ">{i + 1}</div>
               <div className="col-span-5 flex flex-row items-center gap-1">
-                <div className="w-[70px] h-[70px] rounded-lg overflow-hidden">
-                  <Image src={BrandImage} alt="brand" objectFit="cover" />
+                <div className="w-[70px] h-[70px] rounded-lg overflow-hidden relative">
+                  <Image src={BrandImage} alt="brand" fill objectFit="cover" />
                 </div>
                 <div className="overflow-hidden text-nowrap text-ellipsis">
                   {d.name}
@@ -109,8 +109,8 @@ const Ranking = () => {
             >
               <div className="col-span-1 ">{i + 6}</div>
               <div className="col-span-5 flex flex-row items-center gap-1">
-                <div className="w-[70px] h-[70px] rounded-lg overflow-hidden">
-                  <Image src={BrandImage} alt="brand" objectFit="cover" />
+                <div className="w-[70px] h-[70px] rounded-lg overflow-hidden relative">
+                  <Image src={BrandImage} alt="brand" fill objectFit="cover" />
                 </div>
                 <div className="overflow-hidden text-nowrap text-ellipsis">
                   {d.name}
